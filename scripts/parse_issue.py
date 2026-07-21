@@ -28,7 +28,7 @@ def parse_issue(path: Path) -> dict:
     sections = _parse_sections(body)
     expected = set(SECTION_MAP.values())
     got = {s["id"] for s in sections}
-    if got != expected:
+    if len(sections) != 3 or got != expected:
         raise ValueError(f"sections must be exactly 国内政策/国外前沿/重点新闻, got {got}")
     return {**meta, "sections": sections}
 

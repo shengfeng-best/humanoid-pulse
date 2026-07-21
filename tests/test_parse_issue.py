@@ -16,8 +16,8 @@ def test_parse_sample_has_three_sections():
     assert item["source"]
 
 
-def test_missing_url_raises():
-    bad = FIXTURE.parent / "bad-issue.md"
+def test_missing_url_raises(tmp_path):
+    bad = tmp_path / "bad-issue.md"
     bad.write_text(
         "---\nnumber: 1\ndate_start: '2026-07-14'\ndate_end: '2026-07-20'\n"
         f"lede: {repr('x' * 80)}\n"
