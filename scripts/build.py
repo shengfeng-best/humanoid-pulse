@@ -43,6 +43,25 @@ def _inline_fonts(template: str) -> str:
     return template.replace(link, f"<style>\n{css}\n  </style>")
 
 
+def _render_cover_html(data: dict, issue_dir: Path) -> str:
+    cover = data.get("cover")
+    if not cover:
+        return ""
+    cover_path = str(cover).strip()
+    if not cover_path or not (issue_dir / cover_path).is_file():
+        return ""
+    src = html.escape(cover_path, quote=True)
+    caption = html.escape(str(data.get("cover_caption") or "本期封面"))
+    return (
+        f'<figure class="cover">\n'
+        f'  <div class="cover-frame">'
+        f'<img class="cover-image" src="{src}" alt="{caption}" />'
+        f"</div>\n"
+        f'  <figcaption class="cover-caption">{caption}</figcaption>\n'
+        f"</figure>"
+    )
+
+
 def _render_web_sections(sections: list[dict], issue_dir: Path) -> str:
     by_id = {s["id"]: s for s in sections}
     parts: list[str] = []
@@ -53,24 +72,45 @@ def _render_web_sections(sections: list[dict], issue_dir: Path) -> str:
             img_html = ""
             img_rel = item.get("image")
             has_image = bool(img_rel) and (issue_dir / img_rel).is_file()
-            item_class = "item item--with-image" if has_image else "item"
+            featured = bool(item.get("featured")) and has_image
+            classes = ["item"]
+            if featured:
+                classes.append("item--featured")
+            elif has_image:
+                classes.append("item--with-image")
+            item_class = " ".join(classes)
             if has_image:
                 src = html.escape(img_rel, quote=True)
                 alt = html.escape(item["title"], quote=True)
-                img_html = f'\n      <img class="item-image" src="{src}" alt="{alt}" />'
+                img_html = (
+                    f'\n      <div class="item-image-wrap">'
+                    f'<img class="item-image" src="{src}" alt="{alt}" />'
+                    f"</div>"
+                )
             title = html.escape(item["title"])
             url = html.escape(item["url"], quote=True)
             summary = html.escape(item["summary"]).replace("\n", "<br />\n")
             source = html.escape(item["source"])
-            items_html.append(
-                f'<article class="{item_class}">\n'
+            kicker = (
+                '<p class="item-kicker">本期主条</p>\n    ' if featured else ""
+            )
+            body = (
                 f'  <div class="item-body">\n'
+                f"    {kicker}"
                 f'    <h3 class="item-title"><a href="{url}">{title}</a></h3>\n'
                 f'    <p class="item-summary">{summary}</p>\n'
                 f'    <p class="item-source">{source}</p>\n'
-                f"  </div>{img_html}\n"
-                f"</article>"
+                f"  </div>"
             )
+            if featured:
+                # Image first for magazine lead
+                items_html.append(
+                    f'<article class="{item_class}">{img_html}\n{body}\n</article>'
+                )
+            else:
+                items_html.append(
+                    f'<article class="{item_class}">\n{body}{img_html}\n</article>'
+                )
         title_esc = html.escape(section["title"])
         parts.append(
             f'<section class="section" id="section-{sid}">\n'
@@ -106,24 +146,35 @@ def _render_email_sections(
             source = html.escape(item["source"])
             img_html = ""
             img_rel = item.get("image")
+            featured = bool(item.get("featured"))
             if img_rel and (issue_dir / img_rel).is_file():
                 abs_src = html.escape(
                     f"{base}/issues/{number_padded}/{img_rel.replace(chr(92), '/')}",
                     quote=True,
                 )
                 alt = html.escape(item["title"], quote=True)
+                img_h = "320" if featured else "220"
                 img_html = (
-                    f'<p style="margin:0 0 12px 0;">'
-                    f'<img src="{abs_src}" alt="{alt}" width="560" '
+                    f'<p style="margin:0 0 14px 0;">'
+                    f'<img src="{abs_src}" alt="{alt}" width="560" height="{img_h}" '
                     f'style="display:block;width:100%;max-width:560px;height:auto;border:0;" />'
                     f"</p>"
                 )
+            title_size = "22px" if featured else "18px"
+            kicker = (
+                '<p style="margin:0 0 6px 0;font-family:system-ui,-apple-system,sans-serif;'
+                'font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#9A6350;'
+                'font-weight:600;">本期主条</p>'
+                if featured
+                else ""
+            )
             rows.append(
-                f'<tr><td style="padding:16px 0 0 0;border-top:1px solid #D9D2C5;">'
-                f'<p style="margin:0 0 8px 0;font-family:Georgia,\'Times New Roman\',serif;'
-                f'font-size:18px;line-height:1.35;">'
-                f'<a href="{url}" style="color:#1A1A1A;text-decoration:none;">{title}</a></p>'
+                f'<tr><td style="padding:20px 0 0 0;border-top:1px solid #D9D2C5;">'
+                f"{kicker}"
                 f"{img_html}"
+                f'<p style="margin:0 0 8px 0;font-family:Georgia,\'Times New Roman\',serif;'
+                f'font-size:{title_size};line-height:1.3;">'
+                f'<a href="{url}" style="color:#1A1A1A;text-decoration:none;">{title}</a></p>'
                 f'<p style="margin:0 0 8px 0;font-family:Georgia,\'Times New Roman\',serif;'
                 f'font-size:15px;line-height:1.65;color:#1A1A1A;">{summary}</p>'
                 f'<p style="margin:0;font-family:system-ui,-apple-system,sans-serif;'
@@ -254,6 +305,23 @@ def build_issue(
     email_sections = _render_email_sections(
         data["sections"], issue_dir, data["pages_base_url"], number_padded
     )
+    cover_html = _render_cover_html(data, issue_dir)
+    email_cover = ""
+    cover = data.get("cover")
+    if cover and (issue_dir / str(cover)).is_file():
+        abs_cover = html.escape(
+            f"{data['pages_base_url'].rstrip('/')}/issues/{number_padded}/{str(cover).replace(chr(92), '/')}",
+            quote=True,
+        )
+        cap = html.escape(str(data.get("cover_caption") or "本期封面"))
+        email_cover = (
+            f'<tr><td style="padding:0 0 20px 0;">'
+            f'<img src="{abs_cover}" alt="{cap}" width="600" '
+            f'style="display:block;width:100%;max-width:600px;height:auto;border:0;" />'
+            f'<p style="margin:8px 0 0 0;font-family:system-ui,-apple-system,sans-serif;'
+            f'font-size:11px;letter-spacing:0.08em;color:#8A847C;">{cap}</p>'
+            f"</td></tr>"
+        )
 
     mapping = {
         "number_padded": number_padded,
@@ -262,6 +330,8 @@ def build_issue(
         "pages_url": html.escape(pages_url, quote=True),
         "next_label": html.escape(data["next_label"]),
         "sections_html": web_sections,
+        "cover_html": cover_html,
+        "cover_email_html": email_cover,
     }
 
     web_tpl = _inline_fonts((TEMPLATES / "pulse.html").read_text(encoding="utf-8"))

@@ -5,6 +5,8 @@ date_end: "2026-07-20"
 lede: "本周信号很清楚：标准与实训把“规模化”从口号落成制度抓手，海外则用产线试点与顶会论文回答“能不能干活”。产量叙事升温之际，更值得盯的是可复现部署与全生命周期治理，而非舞台动作。"
 pages_base_url: "https://shengfeng-best.github.io/humanoid-pulse"
 next_label: "№02"
+cover: assets/cover-bmw-figure03.jpg
+cover_caption: "封面 · BMW 斯巴坦堡产线的 Figure 03（宝马官方通稿图）"
 ---
 
 ## 国内政策
@@ -50,6 +52,8 @@ next_label: "№02"
 ### BMW × Figure 03：斯巴坦堡物流排序进入产线试点
 - source: BMW Group
 - url: https://www.press.bmwgroup.com/global/article/detail/T0458778EN/bmw-group-advances-the-use-of-physical-ai-in-production-with-figure-03-project-in-spartanburg?language=en
+- image: assets/bmw-figure03.jpg
+- featured: true
 - summary: |
   宝马官方新闻稿称，继 Figure 02 在斯巴坦堡车身车间支持逾3万台 X3 生产后，Figure 03 将承接物流排序：从散装料箱拣选零件并放入排序台车，再由自动牵引/转运系统送达工位。新机型强调软性安全构件、无线充电、语音交互与带触觉/掌部相机的手部。编辑判断：这是目前最可核验的第三方人形产线路径之一——任务刻意选择重复、高工效损耗的物流，而非炫技装配；后续应盯可用率与节拍，而非新闻稿形容词。（行业跟进报道亦见于7月中旬）
 
@@ -82,23 +86,29 @@ next_label: "№02"
 ### 现代汽车集团推进全资控股波士顿动力
 - source: The Korea Herald
 - url: https://www.koreaherald.com/article/10811183
+- featured: true
+- image: assets/hyundai-bd.jpg
 - summary: |
   《韩国先驱报》报道，软银行使卖出期权拟出售剩余约9.65%波士顿动力股权，交易完成后现代汽车集团关联方将实现全资控股。集团计划2028年起在美国佐治亚工厂以 Atlas 做人形零件排序，2030年扩展至部件装配，并规划2028年3万台年产能目标。7月5日 Atlas 还在世界杯赛场递送比赛用球。编辑观点：股权整合降低决策摩擦，但量产与产线可靠性仍是2028节点前的主风险。（英文科技媒体7月16日亦有跟进）
 
 ### Engadget：现代加速 Atlas 商业化与 Physical AI 链条整合
 - source: Engadget
 - url: https://www.engadget.com/2216427/hyundai-reportedly-looking-to-buy-all-of-boston-dynamics-from-softbank/
+- image: assets/engadget-hyundai.jpg
 - summary: |
   Engadget 7月16日援引彭博社称，现代正审视合同权利以收购软银剩余股权（报道口径约9.9%、估值约3.25亿美元），并引用现代声明称将加速 Physical AI 与机器人方案的开发、验证与商业化；Atlas 与英伟达、Google DeepMind 合作推进。编辑判断：与《韩国先驱报》相互印证股权交易方向；对读者而言，重点不是体育场秀，而是佐治亚工厂时间表是否按节拍滑动。
 
 ### Figure 官方：F.03 入驻宝马 Hall 52，排序物流上线
 - source: Figure AI
 - url: https://www.figure.ai/news/f-03-at-bmw
+- image: assets/figure-f03-bmw.jpg
 - summary: |
   Figure 于6月30日官方博客称，Figure 03 已进入斯巴坦堡 Hall 52，任务从钣金上下料升级为排序物流：在非规整料箱中拣选并装入排序台车，再由转运系统送达工位；并强调 Helix 02 驱动的 loco-manipulation。文中回溯 Figure 02 曾支持逾3万辆车组装。编辑判断：厂商稿需与宝马 PressClub 对照阅读；价值在于任务边界诚实——重复、高损耗的物流排序，而非炫技装配。
 
 ### Electrek：弗里蒙特改建 Optimus，Q1 电话会给出启动窗口
 - source: Electrek
 - url: https://electrek.co/2026/04/22/tesla-optimus-production-fremont-model-sx-line/
+- featured: true
+- image: assets/tesla-optimus.webp
 - summary: |
   Electrek 据特斯拉 Q1 2026 财报电话会报道：Model S/X 线于5月初收官后改建 Optimus，马斯克称目标在7月底或8月启动生产，但初期会“相当慢”，并因约1万个独特零件拒绝给出2026产量指引。编辑判断：这是可回溯的管理层口径，而非二手改写；对本周读者，应把“产线就位”与“稳定出货”分开记账，并与宝马—Figure 的可核验部署对照。

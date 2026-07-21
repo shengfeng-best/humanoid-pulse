@@ -25,8 +25,10 @@ next_label: "№02"
 | `lede` | string | 编者开篇，80–120 字 |
 | `pages_base_url` | string | GitHub Pages 站点根 URL |
 | `next_label` | string | 下期预告标签，如 `№02` |
+| `cover` | string | 可选，封面图相对路径，如 `assets/cover.jpg` |
+| `cover_caption` | string | 可选，封面说明 |
 
-以上字段均为**强制**；缺失或为空时解析器抛出 `ValueError`。
+以上 `number`–`next_label` 为**强制**；缺失或为空时解析器抛出 `ValueError`。`cover` / `cover_caption` 可选。
 
 ## 正文三节（强制）
 
@@ -60,6 +62,7 @@ next_label: "№02"
 | `url` | 是 | 原文链接，须以 `http://` 或 `https://` 开头 |
 | `summary` | 是 | 短评，2–4 句；可用 `\|` 多行块 |
 | `image` | 否 | 配图相对路径，如 `assets/foo.jpg`；缺省为 `null` |
+| `featured` | 否 | `true` 时渲染为大图主条（需同时有可用 `image`） |
 
 缺强制字段或 URL 不合法时，解析器抛出 `ValueError`，消息含节名、条目索引与字段名。
 

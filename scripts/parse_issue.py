@@ -82,6 +82,8 @@ def _parse_items(body: str, section: str) -> list[dict]:
                 raise ValueError(f"{section} item[{len(items)}] missing {req}: {title}")
         if not fields["url"].startswith(("http://", "https://")):
             raise ValueError(f"{section} item[{len(items)}] invalid url: {title}")
+        featured_raw = (fields.get("featured") or "").strip().lower()
+        featured = featured_raw in ("true", "yes", "1")
         items.append(
             {
                 "title": title,
@@ -89,6 +91,7 @@ def _parse_items(body: str, section: str) -> list[dict]:
                 "url": fields["url"],
                 "summary": fields["summary"],
                 "image": fields.get("image") or None,
+                "featured": featured,
             }
         )
     if not items:
