@@ -5,65 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>人形脉冲 №{{number_padded}} · {{date_range}}</title>
 </head>
-<body style="margin:0;padding:0;background-color:#F4F1EA;color:#1A1A1A;">
+<body style="margin:0;padding:0;background-color:#F3EFE6;color:#141210;">
   <!--
     Email template: table layout, inline styles only.
-    Images: build replaces relative paths with absolute URLs, e.g.
-    {{pages_base_url}}/issues/01/assets/...
+    Images use relative assets/ paths; send_email.py inlines as CID.
   -->
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F4F1EA;margin:0;padding:0;width:100%;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F3EFE6;margin:0;padding:0;width:100%;">
     <tr>
-      <td align="center" style="padding:24px 12px;">
-        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background-color:#F4F1EA;">
-          <!-- 文首：在线阅读 -->
+      <td align="center" style="padding:28px 14px;">
+        <table role="presentation" width="640" cellpadding="0" cellspacing="0" border="0" style="width:640px;max-width:640px;background-color:#F3EFE6;">
           <tr>
-            <td style="padding:0 0 16px 0;font-family:system-ui,-apple-system,sans-serif;font-size:12px;line-height:1.5;color:#5C574F;letter-spacing:0.04em;">
-              在线阅读：<a href="{{pages_url}}" style="color:#9A6350;text-decoration:underline;">{{pages_url}}</a>
+            <td style="padding:0 0 18px 0;font-family:system-ui,-apple-system,sans-serif;font-size:13px;line-height:1.5;color:#4F4A43;letter-spacing:0.04em;">
+              在线阅读：<a href="{{pages_url}}" style="color:#8B5342;text-decoration:underline;">{{pages_url}}</a>
             </td>
           </tr>
 
-          <!-- 刊头 -->
           <tr>
-            <td style="padding:0 0 12px 0;border-bottom:1px solid #D9D2C5;font-family:system-ui,-apple-system,sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#5C574F;">
-              <span style="color:#9A6350;font-weight:600;">PULSE · №{{number_padded}}</span>
-              &nbsp;&nbsp;<span style="letter-spacing:0.08em;text-transform:none;">{{date_range}}</span>
+            <td style="padding:0 0 14px 0;border-bottom:2px solid #141210;font-family:system-ui,-apple-system,sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#4F4A43;">
+              <span style="color:#8B5342;font-weight:600;">PULSE · №{{number_padded}}</span>
+              &nbsp;&nbsp;<span style="letter-spacing:0.06em;text-transform:none;">{{date_range}}</span>
             </td>
           </tr>
 
-          <!-- 标题 -->
           <tr>
-            <td style="padding:28px 0 12px 0;font-family:Georgia,'Times New Roman',serif;font-size:32px;line-height:1.15;color:#1A1A1A;font-weight:400;">
+            <td style="padding:32px 0 14px 0;font-family:Georgia,'Times New Roman',serif;font-size:40px;line-height:1.12;color:#141210;font-weight:400;letter-spacing:0.03em;">
               人形脉冲
             </td>
           </tr>
 
-          <!-- lede -->
           <tr>
-            <td style="padding:0 0 20px 0;font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.65;color:#5C574F;">
+            <td style="padding:0 0 24px 0;font-family:Georgia,'Times New Roman',serif;font-size:18px;line-height:1.75;color:#4F4A43;">
               {{lede}}
             </td>
           </tr>
 
           {{cover_email_html}}
 
-          <!-- 三锚点（纯文本，邮件内跳转弱） -->
           <tr>
-            <td style="padding:14px 0;border-top:1px solid #D9D2C5;border-bottom:1px solid #D9D2C5;font-family:system-ui,-apple-system,sans-serif;font-size:11px;letter-spacing:0.12em;color:#9A6350;">
+            <td style="padding:16px 0;border-top:1px solid #D4CBBC;border-bottom:1px solid #D4CBBC;font-family:system-ui,-apple-system,sans-serif;font-size:12px;letter-spacing:0.12em;color:#8B5342;">
               01 国内政策&nbsp;&nbsp;·&nbsp;&nbsp;02 国外前沿&nbsp;&nbsp;·&nbsp;&nbsp;03 重点新闻
             </td>
           </tr>
 
-          <!-- 分节正文：由 build 注入 table-friendly HTML -->
           <tr>
-            <td style="padding:20px 0 0 0;font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.65;color:#1A1A1A;">
+            <td style="padding:24px 0 0 0;font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.75;color:#141210;">
               {{sections_html}}
             </td>
           </tr>
 
-          <!-- 页脚 -->
           <tr>
-            <td style="padding:28px 0 0 0;border-top:1px solid #D9D2C5;font-family:system-ui,-apple-system,sans-serif;font-size:11px;letter-spacing:0.08em;color:#5C574F;">
-              <p style="margin:0 0 8px 0;">在线阅读：<a href="{{pages_url}}" style="color:#9A6350;">{{pages_url}}</a></p>
+            <td style="padding:32px 0 0 0;border-top:1px solid #D4CBBC;font-family:system-ui,-apple-system,sans-serif;font-size:12px;letter-spacing:0.08em;color:#4F4A43;">
+              <p style="margin:0 0 10px 0;">在线阅读：<a href="{{pages_url}}" style="color:#8B5342;">{{pages_url}}</a></p>
               <p style="margin:0;">下期预告 {{next_label}}</p>
             </td>
           </tr>

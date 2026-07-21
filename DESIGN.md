@@ -1,30 +1,32 @@
 # DESIGN.md — 人形脉冲
 
 ## Color
-- --paper: #F4F1EA
-- --ink: #1A1A1A
-- --muted: #5C574F
-- --rule: #D9D2C5
-- --accent: #9A6350
-- --source: #8A847C
-- --wash: #EBE6DC
+- --paper: #F3EFE6
+- --ink: #141210
+- --muted: #4F4A43
+- --rule: #D4CBBC
+- --accent: #8B5342
+- --source: #7A746C
+- --wash: #E7E0D3
+- --surface: #FAF7F1
 
 ## Type
 - Display: "Noto Serif SC", "Source Serif 4", Georgia, serif
 - UI: system-ui, sans-serif
-- Title: 48px / 1.08
-- Featured title: 28px / 1.25
-- Item title: 20px / 1.35
-- Body: 16px / 1.7
-- Meta: 11px / letter-spacing 0.16em
+- Title: 60px / 1.05
+- Featured title: 34px / 1.28
+- Item title: 24px / 1.35
+- Lede: 20px / 1.75
+- Body: 18.5px / 1.8
+- Meta: 12px / letter-spacing 0.14em
 
 ## Layout
-- Max width: 960px
-- Cover: full-bleed within wrap, 16:9–ish crop (~42vh max), caption under
-- Featured item: stacked — image full width then text (magazine lead)
-- Item with image: 1.35fr / 1fr grid (text / image)
-- No cards-as-decoration; hairline rules + image rhythm
-- Accent used for section labels and sparse emphasis
+- Max width: 1040px; text measure capped ~38em for long summaries
+- Generous vertical rhythm: 2–2.5rem between items
+- Cover: taller crop (~48vh), caption with hairline
+- Featured: image full bleed then oversized title
+- Item with image: 1.4fr / 1fr
+- No cards; rules + typographic hierarchy carry the premium feel
 
 ## Imagery
 - Prefer official press / vendor OG images; store under issues/.../assets/
