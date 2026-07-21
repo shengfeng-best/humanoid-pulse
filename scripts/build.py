@@ -128,7 +128,6 @@ def _render_email_sections(
     number_padded: str,
 ) -> str:
     by_id = {s["id"]: s for s in sections}
-    base = pages_base_url.rstrip("/")
     parts: list[str] = []
     for sid in SECTION_ORDER:
         section = by_id[sid]
@@ -148,15 +147,13 @@ def _render_email_sections(
             img_rel = item.get("image")
             featured = bool(item.get("featured"))
             if img_rel and (issue_dir / img_rel).is_file():
-                abs_src = html.escape(
-                    f"{base}/issues/{number_padded}/{img_rel.replace(chr(92), '/')}",
-                    quote=True,
-                )
+                # Relative path — send_email.py inlines as CID for inbox reliability
+                src = html.escape(img_rel.replace("\\", "/"), quote=True)
                 alt = html.escape(item["title"], quote=True)
                 img_h = "320" if featured else "220"
                 img_html = (
                     f'<p style="margin:0 0 14px 0;">'
-                    f'<img src="{abs_src}" alt="{alt}" width="560" height="{img_h}" '
+                    f'<img src="{src}" alt="{alt}" width="560" height="{img_h}" '
                     f'style="display:block;width:100%;max-width:560px;height:auto;border:0;" />'
                     f"</p>"
                 )
@@ -309,14 +306,11 @@ def build_issue(
     email_cover = ""
     cover = data.get("cover")
     if cover and (issue_dir / str(cover)).is_file():
-        abs_cover = html.escape(
-            f"{data['pages_base_url'].rstrip('/')}/issues/{number_padded}/{str(cover).replace(chr(92), '/')}",
-            quote=True,
-        )
+        rel = html.escape(str(cover).replace("\\", "/"), quote=True)
         cap = html.escape(str(data.get("cover_caption") or "本期封面"))
         email_cover = (
             f'<tr><td style="padding:0 0 20px 0;">'
-            f'<img src="{abs_cover}" alt="{cap}" width="600" '
+            f'<img src="{rel}" alt="{cap}" width="600" '
             f'style="display:block;width:100%;max-width:600px;height:auto;border:0;" />'
             f'<p style="margin:8px 0 0 0;font-family:system-ui,-apple-system,sans-serif;'
             f'font-size:11px;letter-spacing:0.08em;color:#8A847C;">{cap}</p>'
