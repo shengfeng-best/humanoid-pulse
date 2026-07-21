@@ -54,8 +54,10 @@
     *, *::before, *::after { box-sizing: border-box; }
 
     html {
-      font-size: 18px;
+      /* 手机偏大、桌面随屏宽略增，避免手机反而缩小 */
+      font-size: clamp(19.5px, 0.55vw + 17.5px, 21.5px);
       -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
     }
 
     body {
@@ -65,8 +67,8 @@
         var(--paper);
       color: var(--ink);
       font-family: "Noto Serif SC", "Source Serif 4", Georgia, serif;
-      font-size: 1.027rem; /* ~18.5px */
-      line-height: 1.8;
+      font-size: 1.05rem;
+      line-height: 1.85;
       font-feature-settings: "kern" 1, "liga" 1;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
@@ -81,9 +83,10 @@
     a:hover { color: var(--accent); }
 
     .wrap {
-      max-width: 1040px;
+      width: min(100% - 2.5rem, 1280px);
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 2.75rem 1.75rem 5.5rem;
+      padding: 2.75rem 0 5.5rem;
     }
 
     .masthead {
@@ -96,7 +99,7 @@
       border-bottom: 2px solid var(--ink);
       box-shadow: 0 1px 0 var(--rule);
       font-family: system-ui, sans-serif;
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
@@ -115,7 +118,7 @@
 
     .issue-title {
       margin: 2rem 0 1rem;
-      font-size: clamp(2.6rem, 6vw, 3.75rem);
+      font-size: clamp(2.75rem, 5.5vw, 4.25rem);
       line-height: 1.05;
       font-weight: 400;
       letter-spacing: 0.04em;
@@ -123,10 +126,10 @@
 
     .lede {
       margin: 0 0 2rem;
-      max-width: 36em;
+      max-width: min(52em, 100%);
       color: var(--muted);
-      font-size: 1.12rem;
-      line-height: 1.75;
+      font-size: 1.15rem;
+      line-height: 1.8;
     }
 
     .cover {
@@ -173,7 +176,7 @@
       display: block;
       padding: 0.45rem 0;
       font-family: system-ui, sans-serif;
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       letter-spacing: 0.16em;
       text-decoration: none;
       color: var(--muted);
@@ -190,7 +193,7 @@
 
     .anchors .label {
       font-family: "Noto Serif SC", "Source Serif 4", Georgia, serif;
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       letter-spacing: 0.02em;
       color: var(--ink);
       text-transform: none;
@@ -206,7 +209,7 @@
       padding-bottom: 0.7rem;
       border-bottom: 2.5px solid var(--ink);
       font-family: system-ui, sans-serif;
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--accent);
@@ -222,8 +225,8 @@
 
     .item--with-image {
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 1.6rem 2rem;
+      grid-template-columns: minmax(0, 1.55fr) minmax(240px, 0.9fr);
+      gap: 1.75rem 2.25rem;
       align-items: start;
     }
 
@@ -244,27 +247,27 @@
 
     .item--featured .item-image {
       width: 100%;
-      height: clamp(240px, 40vh, 480px);
+      height: clamp(240px, 40vh, 520px);
       object-fit: cover;
     }
 
     .item--featured .item-title {
-      font-size: clamp(1.65rem, 3.2vw, 2.15rem);
+      font-size: clamp(1.75rem, 2.8vw, 2.35rem);
       line-height: 1.28;
-      max-width: 18em;
+      max-width: min(28em, 100%);
       letter-spacing: 0.01em;
     }
 
     .item--featured .item-summary {
-      max-width: 36em;
-      font-size: 1.05rem;
-      line-height: 1.8;
+      max-width: min(52em, 100%);
+      font-size: 1.08rem;
+      line-height: 1.85;
     }
 
     .item-kicker {
       margin: 0 0 0.55rem;
       font-family: system-ui, sans-serif;
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--accent);
@@ -273,8 +276,8 @@
 
     .item-title {
       margin: 0 0 0.7rem;
-      font-size: 1.35rem;
-      line-height: 1.35;
+      font-size: 1.42rem;
+      line-height: 1.38;
       font-weight: 400;
       letter-spacing: 0.01em;
     }
@@ -284,16 +287,16 @@
 
     .item-summary {
       margin: 0 0 0.9rem;
-      max-width: 38em;
+      max-width: min(52em, 100%);
       color: var(--ink);
-      font-size: 1.027rem;
-      line-height: 1.8;
+      font-size: 1.05rem;
+      line-height: 1.85;
     }
 
     .item-source {
       margin: 0;
       font-family: system-ui, sans-serif;
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       letter-spacing: 0.14em;
       color: var(--source);
     }
@@ -325,7 +328,7 @@
       padding-top: 1.5rem;
       border-top: 1px solid var(--rule);
       font-family: system-ui, sans-serif;
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       letter-spacing: 0.08em;
       color: var(--muted);
       display: flex;
@@ -337,15 +340,58 @@
     .footer a { color: var(--muted); }
     .footer a:hover { color: var(--accent); }
 
+    /* 平板：仍双栏，略收紧 */
+    @media (max-width: 960px) {
+      .wrap { width: min(100% - 2rem, 1280px); }
+      .item--with-image {
+        grid-template-columns: minmax(0, 1.35fr) minmax(200px, 0.95fr);
+        gap: 1.35rem 1.5rem;
+      }
+    }
+
+    /* 手机：更大字号、单栏、更好点按 */
     @media (max-width: 720px) {
-      html { font-size: 17px; }
-      .wrap { padding: 1.75rem 1.15rem 4rem; }
-      .issue-title { font-size: 2.35rem; }
-      .anchors { grid-template-columns: 1fr; }
+      html { font-size: clamp(20px, 4.6vw, 22px); }
+      body { line-height: 1.9; }
+      .wrap {
+        width: min(100% - 1.5rem, 1280px);
+        padding: 1.5rem 0 4rem;
+      }
+      .masthead { font-size: 0.72rem; letter-spacing: 0.12em; }
+      .issue-title {
+        margin: 1.35rem 0 0.85rem;
+        font-size: clamp(2.4rem, 11vw, 3rem);
+      }
+      .lede { font-size: 1.08rem; max-width: none; }
+      .anchors {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+        margin-bottom: 2.25rem;
+      }
+      .anchors .label { font-size: 1.15rem; }
+      .cover-image { height: clamp(200px, 38vh, 320px); }
+      .item { padding: 1.55rem 0; }
       .item--with-image { grid-template-columns: 1fr; }
-      .item--with-image .item-image-wrap { order: -1; }
-      .item--featured .item-title { font-size: 1.55rem; }
-      .item-title { font-size: 1.22rem; }
+      .item--with-image .item-image-wrap { order: -1; margin-bottom: 0.85rem; }
+      .item--with-image:not(.item--featured) .item-image {
+        min-height: 200px;
+        aspect-ratio: 16 / 10;
+      }
+      .item--featured { padding: 1.5rem 0 1.85rem; }
+      .item--featured .item-title { font-size: 1.55rem; max-width: none; }
+      .item--featured .item-summary,
+      .item-summary { max-width: none; font-size: 1.05rem; }
+      .item-title { font-size: 1.28rem; }
+      .item-kicker { font-size: 0.72rem; }
+      .footer { font-size: 0.75rem; word-break: break-all; }
+    }
+
+    /* 大屏桌面：用满宽栏，正文不再人为收窄 */
+    @media (min-width: 1200px) {
+      .wrap { width: min(100% - 4rem, 1320px); }
+      .item--with-image {
+        grid-template-columns: minmax(0, 1.65fr) minmax(280px, 0.85fr);
+      }
     }
   </style>
 </head>

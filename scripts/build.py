@@ -157,10 +157,10 @@ def _render_email_sections(
                     f'style="display:block;width:100%;max-width:560px;height:auto;border:0;" />'
                     f"</p>"
                 )
-            title_size = "26px" if featured else "21px"
+            title_size = "28px" if featured else "22px"
             kicker = (
                 '<p style="margin:0 0 8px 0;font-family:system-ui,-apple-system,sans-serif;'
-                'font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#8B5342;'
+                'font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#8B5342;'
                 'font-weight:600;">本期主条</p>'
                 if featured
                 else ""
@@ -170,12 +170,12 @@ def _render_email_sections(
                 f"{kicker}"
                 f"{img_html}"
                 f'<p style="margin:0 0 10px 0;font-family:Georgia,\'Times New Roman\',serif;'
-                f'font-size:{title_size};line-height:1.32;letter-spacing:0.01em;">'
+                f'font-size:{title_size};line-height:1.35;letter-spacing:0.01em;">'
                 f'<a href="{url}" style="color:#141210;text-decoration:none;">{title}</a></p>'
                 f'<p style="margin:0 0 10px 0;font-family:Georgia,\'Times New Roman\',serif;'
-                f'font-size:17px;line-height:1.75;color:#141210;">{summary}</p>'
+                f'font-size:18px;line-height:1.8;color:#141210;">{summary}</p>'
                 f'<p style="margin:0;font-family:system-ui,-apple-system,sans-serif;'
-                f'font-size:12px;letter-spacing:0.14em;color:#7A746C;">{source}</p>'
+                f'font-size:13px;letter-spacing:0.12em;color:#7A746C;">{source}</p>'
                 f"</td></tr>"
             )
         parts.append(

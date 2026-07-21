@@ -21,12 +21,10 @@
 - Meta: 12px / letter-spacing 0.14em
 
 ## Layout
-- Max width: 1040px; text measure capped ~38em for long summaries
-- Generous vertical rhythm: 2–2.5rem between items
-- Cover: taller crop (~48vh), caption with hairline
-- Featured: image full bleed then oversized title
-- Item with image: 1.4fr / 1fr
-- No cards; rules + typographic hierarchy carry the premium feel
+- Desktop max width: ~1280–1320px（正文不再用 36em 收窄）
+- Mobile root: ≥20px，单栏；禁止手机端缩小根字号
+- Fluid type: clamp() 随屏宽缩放
+- Item with image: 文宽图窄（约 1.55–1.65 / 0.85–0.9）
 
 ## Imagery
 - Prefer official press / vendor OG images; store under issues/.../assets/
