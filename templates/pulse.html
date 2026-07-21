@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>人形脉冲 №{{number_padded}} · {{date_range}}</title>
+  <!-- Build may inline fonts.css; path is relative to templates/ for local preview -->
+  <link rel="stylesheet" href="../../assets/fonts/fonts.css" />
+  <style>
+    :root {
+      --paper: #F4F1EA;
+      --ink: #1A1A1A;
+      --muted: #5C574F;
+      --rule: #D9D2C5;
+      --accent: #9A6350;
+      --source: #8A847C;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Serif SC", "Source Serif 4", Georgia, serif;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover { color: var(--accent); }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    /* —— 刊头 —— */
+    .masthead {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--rule);
+      font-family: system-ui, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead-brand {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .masthead-date { letter-spacing: 0.08em; text-transform: none; }
+
+    /* —— 标题 / lede —— */
+    .issue-title {
+      margin: 1.75rem 0 0.85rem;
+      font-size: 42px;
+      line-height: 1.1;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    .lede {
+      margin: 0 0 1.75rem;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* —— 三锚点 —— */
+    .anchors {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem 1rem;
+      margin: 0 0 2.25rem;
+      padding: 1rem 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      list-style: none;
+    }
+
+    .anchors a {
+      display: block;
+      font-family: system-ui, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    .anchors a:hover { color: var(--accent); }
+
+    .anchors .num {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .anchors .label {
+      font-family: "Noto Serif SC", "Source Serif 4", Georgia, serif;
+      font-size: 15px;
+      letter-spacing: 0;
+      color: var(--ink);
+      text-transform: none;
+    }
+
+    /* —— sections_html 约定类名（build 渲染时使用） —— */
+    .section {
+      margin: 0 0 2.5rem;
+    }
+
+    .section-label {
+      margin: 0 0 1rem;
+      font-family: system-ui, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .item {
+      padding: 1.15rem 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .item:first-of-type { border-top: none; padding-top: 0; }
+
+    .item--with-image {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 1.25rem 1.5rem;
+      align-items: start;
+    }
+
+    .item-title {
+      margin: 0 0 0.5rem;
+      font-size: 20px;
+      line-height: 1.35;
+      font-weight: 400;
+    }
+
+    .item-title a { text-decoration: none; }
+    .item-title a:hover { text-decoration: underline; }
+
+    .item-summary {
+      margin: 0 0 0.65rem;
+      color: var(--ink);
+    }
+
+    .item-source {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: var(--source);
+    }
+
+    .item-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 0;
+    }
+
+    .item-body { min-width: 0; }
+
+    /* —— 页脚 —— */
+    .footer {
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--rule);
+      font-family: system-ui, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      justify-content: space-between;
+    }
+
+    .footer a { color: var(--muted); }
+    .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      .issue-title { font-size: 32px; }
+      .anchors { grid-template-columns: 1fr; }
+      .item--with-image { grid-template-columns: 1fr; }
+      .item--with-image .item-image { order: -1; }
+    }
+  </style>
+</head>
+<body>
+  <article class="wrap">
+    <header class="masthead">
+      <span class="masthead-brand">PULSE · №{{number_padded}}</span>
+      <span class="masthead-date">{{date_range}}</span>
+    </header>
+
+    <h1 class="issue-title">人形脉冲</h1>
+    <p class="lede">{{lede}}</p>
+
+    <nav aria-label="本期锚点">
+      <ul class="anchors">
+        <li>
+          <a href="#section-policy">
+            <span class="num">01</span>
+            <span class="label">国内政策</span>
+          </a>
+        </li>
+        <li>
+          <a href="#section-frontier">
+            <span class="num">02</span>
+            <span class="label">国外前沿</span>
+          </a>
+        </li>
+        <li>
+          <a href="#section-news">
+            <span class="num">03</span>
+            <span class="label">重点新闻</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    {{sections_html}}
+
+    <footer class="footer">
+      <span>在线阅读：<a href="{{pages_url}}">{{pages_url}}</a></span>
+      <span>下期预告 {{next_label}}</span>
+    </footer>
+  </article>
+</body>
+</html>
