@@ -3,7 +3,7 @@ number: 1
 date_start: "2026-07-14"
 date_end: "2026-07-20"
 lede: "本周信号很清楚：标准与实训把“规模化”从口号落成制度抓手，海外则用产线试点与顶会论文回答“能不能干活”。产量叙事升温之际，更值得盯的是可复现部署与全生命周期治理，而非舞台动作。"
-pages_base_url: "https://PLACEHOLDER.github.io/humanoid-pulse"
+pages_base_url: "https://shengfeng-best.github.io/humanoid-pulse"
 next_label: "№02"
 ---
 
