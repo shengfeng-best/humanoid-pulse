@@ -1,117 +1,117 @@
 ---
 number: 3
-date_start: "2026-09-15"
-date_end: "2026-09-21"
-lede: "本周两条主线并行：政策侧以标准征求意见与地方场景征集压实「可部署」门槛，产业侧则用 Digit 5 的协同安全架构与 Helix 2.5 的跨户零样本家务，分别回答工厂与人居能否规模化。编辑判断：供应链审计与央企进厂时间表同样关键——产能叙事须与工时、返修和订单结构同屏核验。"
+date_start: "2026-09-22"
+date_end: "2026-09-28"
+lede: "本周政策侧以标准征求意见收官与场景征集截止压实「可核验落地」，产业侧则把长隆超三百台常态化部署与弗里蒙特周产数百台并置对照：前者检验文旅大客流下的运维与网络底座，后者暴露泛化与灵巧手可靠性瓶颈。编辑判断：数贸会与京津冀智造基地同期推进，订单与产线叙事须与第三方工时、失败率同屏阅读。"
 pages_base_url: "https://shengfeng-best.github.io/humanoid-pulse"
 next_label: "№04"
-cover: assets/cover-digit5.jpg
-cover_caption: "封面 · Agility Robotics Digit 5 官方产品页"
+cover: assets/cover-agibot-chimelong.png
+cover_caption: "封面 · 智元 AGIBOT 长隆飞船乐园大规模部署（官方通稿图）"
 ---
 
 ## 国内政策
 
-### 深圳市就「人工智能先锋城市」若干措施（2026 修订版）公开征求意见
-- source: 深圳市工业和信息化局
-- url: https://gxj.sz.gov.cn/xxgk/xxgkml/qt/tzgg/content/post_12983676.html
-- story: sz-ai-pioneer-measures-revision-2026-09
-- summary: |
-  9月16日，市工信局发布通告，对《深圳市打造人工智能先锋城市的若干措施》（深工信规〔2024〕13号）修订形成征求意见稿，落实《深圳市推动人工智能与应用发展行动计划（2026—2028年）》，意见反馈截止2026年10月15日。通告随附修订稿与说明全文。编辑判断：深圳集聚整机、零部件与场景试验场，规范性文件修订往往先于补贴、算力与采购口径调整；具身企业应跟踪附件是否强化智能终端、机器人与「AI+制造」条款，而非仅看标题中的「人工智能」。
-
-### 工信部《国家人形机器人产业标准体系建设指南（2026版）》征求意见进入最后窗口
+### 工信部《国家人形机器人产业标准体系建设指南（2026版）》征求意见公示收官
 - source: 工信部
 - url: https://www.miit.gov.cn/jgsj/kjs/jscx/bzgf/art/2026/art_ef26915b2f0843d58a22f5a090690195.html
-- story: miit-humanoid-standards-guide-comment-deadline-2026-09
+- story: miit-humanoid-standards-guide-comment-closed-2026-09-23
 - summary: |
-  8月24日发布的征求意见稿公示期至2026年9月23日，本期窗口内仍可向 kjbz@miit.gov.cn 提交反馈。指南提出到2028年建成协调配套标准体系，在能力测试评估、关键技术、平台系统、场景应用、安全治理等方面完成至少100项关键标准制定。编辑观点：与第三批行业标准中灵巧手接口规范等条目形成上下位衔接；截止日前提交意见的企业，更易在后续 WG 分工中争取测试方法与安全伦理话语权。
+  8月24日发布的征求意见稿公示期为2026年8月25日至9月23日，本期窗口首日即为截止日；意见可发至 kjbz@miit.gov.cn（邮件主题须注明指南反馈）。指南提出到2028年建成协调配套标准体系，在能力测试评估、关键技术、平台系统、场景应用、安全治理等方面完成至少100项关键标准制定。编辑判断：与第三批行业标准中灵巧手接口规范等条目形成上下位衔接；截止后应跟踪正式稿发布节奏及 WG 分工，而非把「征求意见」误读为体系已生效。
 
-### 广东征集 2026 年「机器人+」典型应用场景（具身智能）
+### 广东省「机器人+」具身智能典型场景案例：线上申报截止 9 月 24 日
 - source: 广东省工业和信息化厅
 - url: https://gdii.gd.gov.cn/zwgk/tzgg1011/content/post_4948451.html
-- story: gd-robot-plus-scenarios-deadline-2026-09
+- story: gd-robot-plus-scenarios-upload-deadline-2026-09-24
 - summary: |
-  省工信厅面向全省已实景落地的具身智能机器人案例开展征集，覆盖制造、医疗、物流、养老、教育、商业社区、政务文旅、居家康养八大领域。申报主体须于9月24日前在「广东省数字工信平台」上传材料，地市审核推荐截止10月10日。编辑判断：截止日落在本期窗口末尾，实质是把「能演示」倒逼成「能交付、能复盘」的清单；后续应跟踪入选案例是否进入部委推广与采购口径。
+  省工信厅面向全省已实景落地的具身智能机器人案例开展征集，覆盖制造、医疗、物流、养老、教育、商业社区、政务文旅、居家康养等八大领域。申报主体须于9月24日前在「广东省数字工信平台」完成材料上传，地市审核推荐截止10月10日。编辑观点：截止日落在本期窗口内，实质是把「能演示」倒逼成「能交付、能复盘」的清单；后续应跟踪入选案例是否进入部委推广与采购口径，并与横琴等地先行截止的转发通知对照口径差异。
 
-### 海珠区：具身智能专项措施与省训练场运营纳入政务公开
-- source: 广州市海珠区人民政府
-- url: https://www.haizhu.gov.cn/hzdt/bmyw/qkgsxj/content/post_11011251.html
-- story: gz-haizhu-embodied-ai-policy-2026-09
+### 「十五五」自然资源发布会：地理信息公共数据赋能具身智能等新兴产业
+- source: 新华社
+- url: https://www.news.cn/politics/20260922/a2b9412a275b4823ba52dbadd498ef4c/c.html
+- story: scio-15th-five-year-geo-embodied-ai-2026-09-22
 - summary: |
-  9月18日，区政府门户发布区科工信局稿件：XAIR Expo 2026 具身智能博览会期间，本土企业发布世界模型与系统级「大脑」新品；文中明确已出台推动前沿产业创新发展若干措施，具身智能产业专项采用「研发激励+平台扶持+量产支持+场景培育」组合，并披露省级训练场一期投运、人工智能产业协会入驻广报中心等信息。编辑观点：这是可核验的地方政策包转述，价值在财政与场景工具是否兑现为可计量工时，而非博览会形容词。
+  9月22日，国务院新闻办公室举行「开局起步『十五五』」系列发布会，自然资源部负责同志介绍「十五五」时期自然资源保护利用安排。通稿援引副部长周星表述：「十五五」期间将深化实景三维中国应用和时空智能科技攻关，推动卫星导航定位基准站网、天地图等公共数据资源授权运营，加快释放地理信息数据要素价值，更好支撑智能驾驶、低空经济、具身智能等新兴产业发展，并披露地理信息产业从业单位已达27万家。编辑判断：这是国家级数据要素口径对人形/具身赛道的间接约束，价值在授权运营与基准网能否转化为可计费训练数据，而非单句产业点名。
+
+### 横琴合作区：「机器人+」具身智能案例征集区内截止 9 月 22 日
+- source: 横琴粤澳深度合作区
+- url: https://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3940247.html
+- story: hengqin-robot-plus-scenarios-deadline-2026-09-22
+- summary: |
+  合作区产业发展局9月11日转发广东省工信厅通知，要求申报主体登录「广东省数字工信平台」上传《2026年广东具身智能典型应用场景案例申报书（具身智能领域）》等材料，并于9月22日前完成全部材料上传（省级统一平台截止日为9月24日）。征集面向已实景落地、具备较高技术水平和显著应用成效的具身智能机器人案例。编辑观点：区内提前截止体现属地初审节奏；对整机企业而言，应同时满足合作区与省厅两套时间节点，避免仅盯省级截止日而错失推荐资格。
 
 ## 国外前沿
 
-### Agility Robotics 发布 Digit 5：面向与人协同的安全规模化作业
-- source: Agility Robotics
-- url: https://www.agilityrobotics.com/content/agility-unveils-digit-5-humanoid-robot-built-for-cooperatively-safe-work-at-scale
-- image: assets/agility-digit5.jpg
-- story: agility-digit-5-launch-2026-09
-- summary: |
-  9月15日，Agility 在俄勒冈州 Salem 发布 Digit 5，宣称可在无物理安全围栏条件下与人近距离协作，依托人形检测、运动意图通信与独立安全控制器；整机高约 5 英尺 11 英寸、可重复搬运约 50 磅负载，并给出约 10:1 运行—充电比与 2027 年 H1 早期交付、年底 GA 时间表。通稿称 Digit 4 累计商用部署逾 6.5 万小时，Digit 5 订单管道逾 3 亿美元（受合同里程碑约束）。编辑判断：产业意义在于把「安全架构」当作扩产前提，并与 NVIDIA Halos 等工业安全栈对接；仍需第三方工时与 OSHA 场景下的可用率数据。
-
-### arXiv：Weave 从人类—物体交互学习全身灵巧 loco-manipulation
+### arXiv：HuGo 以 LLM 生成全身 loco-manipulation 高层策略代码
 - source: arXiv
-- url: https://arxiv.org/abs/2609.16683
-- story: arxiv-weave-2609-16683
+- url: https://arxiv.org/abs/2609.30594
+- story: arxiv-hugo-2609-30594
 - summary: |
-  9月15日提交（arXiv:2609.16683）。Weave 将捕获的人类—物体交互经接触感知重定向与接近运动补全，转为可执行机器人轨迹，再用单一策略联合控制 29 个身体关节与 12 个手指关节；在九个物体上训练交互成功率 92.5%，对未见序列零样本成功率 65.0%，并发布约 9000 条、约 23 小时真机 rollout 数据。编辑观点：数据释放比单点成功率更值得跟踪——若接触标注可复用，将降低「换物体即重训」成本；仍待独立真机长程验证。
+  9月24日提交（arXiv:2609.30594）。HuGo 在冻结低层全身策略之上，用大模型据任务描述生成可执行、闭环的高层策略代码，并据 rollout 数值轨迹与视频帧迭代修正；作者称在五个仿真任务、两套低层策略上显著优于手工奖励的高层 RL 基线，且仿真策略可零样本上硬件，真机三轮 refinement 可将成功率从约20% 提至约90%。编辑判断：价值在「换任务换代码」而非换奖励/示教；瓶颈仍在低层策略能力边界与长程 clutter 下的代码可靠性。
 
-### arXiv：ViLoMan 以深度与本体感知实现门关闭等全身 loco-manipulation
+### arXiv：BeyondRetarget 从单目视频端到端学习可执行人形动作
 - source: arXiv
-- url: https://arxiv.org/abs/2609.19340
-- story: arxiv-viloman-2609-19340
+- url: https://arxiv.org/abs/2609.29850
+- story: arxiv-beyondretarget-2609-29850
 - summary: |
-  9月16日提交（arXiv:2609.19340）。ViLoMan 先把部分 kinematic 人类演示转为完整、物理可执行的机器人轨迹，再以教师—学生蒸馏学习统一策略，将 egocentric 深度与本体测量直接映射为关节级全身动作，部署时无需参考动作或中间指令。作者在多种门配置与初始条件下于仿真与真机评估关门任务，称 Unitree G1 可仅凭 onboard 深度与本体完成全流程。编辑判断：任务边界清晰，适合检验 sim-to-real 与多样门型泛化；工业价值取决于维护与传感标定成本，而非单次演示。
+  9月24日提交（arXiv:2609.29850）。框架跳过显式人体中间表示，直接从单目 RGB 学习面向机器人的隐式表征，并以接触感知运动优化提升时序一致性与物理合理性。作者报告在仿真与真机上相较两阶段 retarget 流水线具有更高精度、鲁棒性与执行成功率、更低延迟。编辑观点：若视频—动作链路可规模化，将降低动捕成本；仍待独立团队在多样本体与长序列任务上复现真机指标。
 
-### arXiv：KINO 以关键帧衔接 VLM 规划与全身 RL 控制
+### arXiv：Echo in the Steps 以门控记忆实现感知型人形跑酷
 - source: arXiv
-- url: https://arxiv.org/abs/2609.18869
-- story: arxiv-kino-2609-18869
+- url: https://arxiv.org/abs/2609.28960
+- story: arxiv-echo-parkour-2609-28960
 - summary: |
-  9月16日提交（arXiv:2609.18869）。框架以运动关键帧连接 VLM 与 RL：VLM 据语言指令与场景观测从库中选择关键帧，再经场景重定向后由关键帧条件全身策略输出关节动作。作者称在仿真中采用显著性采样训练低层策略，可将端到端任务成功率从 44% 提升至 92%，并在 Unitree G1 上完成单手/双手搬运与放置，且可泛化至训练参考之外的放置位置。编辑观点：分层接口降低 VLM 直接输出连续控制的难度；瓶颈仍在关键帧库覆盖与真实 clutter 下的长程成功率。
+  9月24日提交（arXiv:2609.28960）。工作面向稀疏落脚点与窄支撑面，提出显著性引导时序感知模块（显著性先验+门控记忆）在帧间保留有效深度特征，并以 alternation loss 鼓励交替步态。作者称在仿真与真机挑战性地形上显著提升成功率与落脚点精度，且仅依赖 onboard 深度观测。编辑判断：跑酷动态稳定性与工厂分拣可靠性指标不同，但跨帧深度记忆对弱纹理工业地面同样值得跟踪。
+
+### Phys.org / Tech Xplore：TANGO 全身 VLA 在 clutter 中零样本真机穿行
+- source: Tech Xplore
+- url: https://techxplore.com/news/2026-09-humanoid-robots-narrow-gaps-obstacles.html
+- story: techxplore-tango-vla-clutter-2026-09-23
+- summary: |
+  9月23日，Tech Xplore 报道 UC Berkeley 与 Princeton 等团队工作 TANGO（预印本 arXiv:2609.09158），以 egocentric RGB 与语言指令直接预测 29-DoF 关节动作，在仿真中训练后在 Unitree G1 上对 clutter 室内场景做零样本部署。报道引述作者称相较模块化基线在需协商障碍的场景表现更优，且仅依赖 RGB。编辑观点：报道日期在本期窗口内，技术细节须回链预印本；产业意义取决于语言导航在工厂/仓内非结构化通道的可迁移工时，而非单次窄缝演示。
 
 ## 重点新闻
 
-### Figure 发布 Helix 2.5：30 户陌生家庭零样本家务试验
-- source: Figure AI
-- url: https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization
-- image: assets/figure-helix-2-5.jpg
+### 智元 × 长隆：超 300 台具身智能机器人在飞船乐园常态化上岗
+- source: AGIBOT
+- url: https://www.agibot.com/article/231/detail/123.html
+- image: assets/agibot-chimelong.png
 - featured: true
-- story: figure-helix-2-5-zero-shot-homes-2026-09
+- story: agibot-chimelong-300-robots-2026-09-24
 - summary: |
-  9月17日，Figure 宣布 Helix 2.5 在 Index 人类行为预训练基础上，经任务微调得到铺床、叠毛巾、整理客厅三项行为，并在 30 套此前未采集数据的湾区家庭盲测：420 次完整任务试验成功 237 次（约 56%），无 Index 预训练的同架构策略仅 9%。公司强调「零样本」指评估家庭与操作对象，而非未经任何任务数据。编辑判断：这是迄今可核验范围最大的跨户全身家务样本，但 44% 失败率与自评实验设计意味着离付费家政仍远；应等待独立复现与干预统计。
+  9月24日，智元与长隆集团在珠海横琴长隆飞船乐园启动大规模具身智能部署，300余台机器人覆盖文娱商演、科普研学、导览导购、零售、智能伴游、酒店与体育竞技等场景，并交付第20000台下线机器人。通稿强调专用连接、多机协同与安全系统，并与长隆共建文旅联合研究院及与中国移动的 5G-A 创新应用。编辑判断：这是迄今可核验的单点最大文旅常态化部署之一，但大客流、强互动场景的故障率与运维人力仍未见第三方统计，不宜把开园热度直接外推为可复制模板。
 
-### 东风：人形机器人 10 月进厂，年底小批量试制
-- source: 第一财经
-- url: https://www.yicai.com/news/103371069.html
-- story: dongfeng-humanoid-trial-production-2026-09
+### 报道：特斯拉弗里蒙特 Optimus 周产升至数百台，泛化与手部仍承压
+- source: Electrek
+- url: https://electrek.co/2026/09/25/tesla-optimus-production-ramp-hands-ai-generalization-problems/
+- story: tesla-optimus-weekly-hundreds-generalization-2026-09-25
 - summary: |
-  9月20日，第一财经报道东风汽车第十届科技创新周发布「天净零碳」等多项计划；智能化技术首席总工程师张振林称，人形机器人将于10月进入工厂，面向生产制造执行分拣、质检等任务，年底开展小批量、小点位试制，目标明年年底作业能力与真人持平。机器狗将更快进入 4S 导购等场景。编辑观点：与 №02 窗口内的部署预告相比，本期给出更明确的试制节点；关键在总装节拍内的可用率与返修，而非科技周展示动作。
+  9月25日，Electrek 援引 The Information 称，特斯拉弗里蒙特 Optimus 产线已由二季度每周数十台增至8月以来每周数百台，管理层目标年底连续自动化线超1000台/周；多数下线机用于内部测试与数据采集，产线内作业仍限于受控区域与特定任务。报道同时指手部含100余螺钉/小件、供应商良率与 AI 泛化不足，基础任务学习仍 reportedly 需数日。编辑观点：产能阶跃可核验性取决于后续股东信或监管披露；与广东文旅部署对照，特斯拉瓶颈在「造出来」之后「干什么」的工时与返修。
 
-### 特斯拉据报在华东审计 Optimus 供应链
-- source: South China Morning Post
-- url: https://www.scmp.com/business/companies/article/3368053/tesla-auditing-chinese-suppliers-ahead-optimus-roll-out-sources
-- story: tesla-optimus-china-supplier-audit-2026-09
+### Boston Dynamics：佐治亚 RMAC 训练 Atlas 服务现代汽车产线物流
+- source: Boston Dynamics
+- url: https://bostondynamics.com/news/boston-dynamics-opens-robotics-metaplant-application-center-to-train-humanoid-robots-for-manufacturing-tasks/
+- image: assets/boston-rmac.jpg
+- story: boston-dynamics-rmac-atlas-hmgma-2026-09
 - summary: |
-  9月18日，《南华早报》援引知情人士称，特斯拉团队已在华启动新一轮供应商审计，涉及三花智控、均胜电子、拓普等浙江零部件企业，多数已为特斯拉汽车供货。报道指审计旨在为 Optimus 今年晚些时候上市后快速扩产做准备；记者联系相关企业与特斯拉，截至发稿未获官方确认具体行程。编辑判断：与 21 世纪经济报道等 9 月 17 日跟进相互印证「产线—供应链」同步推进，但千台级订单与 5 万台产量传闻仍非特斯拉股东信口径；应区分内部 Optimus Academy 训练用量与对外销售。
+  9月21日，Boston Dynamics 宣布在 Hyundai Motor Group Metaplant America 启用 Robotics Metaplant Application Center（RMAC），作为 Atlas 融入汽车制造的测试与训练场，初期任务为零部件物流排序，并规划2030年扩展至部件装配；现代集团此前口径拟在韩美工厂部署约25000台 Atlas，并建设年产能约3万台的新工厂。9月下旬行业媒体跟进称中心已由试点转入全面运营。编辑判断：官方稿任务边界诚实（排序物流而非炫技装配）；应跟踪2028年 HMGMA 排序上线节点是否滑动，而非仅看 CES 口径。
 
-### 第九届中国机器人峰会在杭州开幕
-- source: 中国新闻网
-- url: https://www.chinanews.com.cn/cj/2026/09-17/10698537.shtml
-- story: china-robot-summit-hangzhou-2026-09
+### 优必选京津冀具身智能机器人智造服务基地在天津静海开工
+- source: 央广网
+- url: https://www.cnr.cn/tj/kckx/20260925/t20260925_527825287.shtml
+- story: ubtech-jjj-embodied-manufacturing-base-2026-09-22
 - summary: |
-  9月17日，以「智联新生态，赋能全场景——机器人+时代的智变与质变」为主题的第九届中国机器人峰会在杭州未来科技城开幕。主论坛发布机器人具身智能能力评测框架、《2026中国具身智能产业出海研究报告》，并启动高校智能机器人创意大赛智能体专项赛等。编辑观点：评测框架若转化为采购与保险口径，将加速「表演—作业」分水岭；但框架本身不等于第三方工时数据，仍需与实景实训专项行动的验证指标对照。
+  央广网9月25日报道，9月22日优必选京津冀具身智能机器人智造服务基地项目在天津市静海区开工，定位为研发—制造—应用—服务全环节与上下游全链条集聚；现场发布「智造工厂、数据工厂、人才工厂」及优必选服务平台战略。报道援引天津市工信局推进实景实训专项行动及《天津市智能机器人产业创新发展行动方案（2026—2028年）》目标：到2028年底建设不少于20个实景实训空间、形成100个以上示范应用场景。编辑观点：与柳州万台级工厂形成南北产能对照；关键在静海基地能否输出可计量的实景数据与工时，而非开工仪式本身。
 
-### 上海人形机器人 URKL 自由格斗联赛在宝山开赛
-- source: 上海市人民政府
-- url: https://cdn.shanghai.gov.cn/nw4411/20260920/8d5e38352fa3446d991d59c81c0c02bc.html
-- story: shanghai-urkl-baoshan-2026-09
+### 第五届全球数字贸易博览会开幕：杭州具身智能订单与产业链同台
+- source: 杭州政协网
+- url: https://www.hzzx.gov.cn/cshz/content/2026-09/28/content_9321386.htm
+- story: hangzhou-gtdf-2026-embodied-ai-2026-09-23
 - summary: |
-  9月20日《解放日报》报道，众擎全球人形机器人自由格斗联赛（URKL）上海站在宝山体育中心举行，5000 张门票售罄；32 支队伍统一使用众擎 T800 全尺寸人形作为竞技平台。报道指宝山区与众擎、顾村镇合资成立申擎机器人，具身智能赋能中心预计 10 月投运。编辑判断：赛事热度反映公众认知，但格斗动态稳定性与工厂分拣可靠性并非同一指标；更应跟踪赋能中心数据仓与产业园公共验证平台是否降低中小企业真机试错成本。
+  9月23日至27日，第五届全球数字贸易博览会在杭州举办，17万平方米展馆、超2000家参展企业。杭州政协网9月28日观察稿称，人工智能展区以具身智能为主线，清洁、缝纫、灵巧手与协作多机等细分场景集中亮相，并提及国家人工智能应用中试基地（具身智能）在杭州启用及《杭州市促进具身智能机器人产业发展条例》等制度背景。编辑判断：展会订单与意向须与交付、可用率分开记账；稿件价值在把「机器人挤人」还原为场景细分与产能爬坡，而非单点爆款叙事。
 
-### Faraday Future「919」发布九款 EAI 设备并开售 Futurist 人形
-- source: Faraday Future
-- url: https://investors.ff.com/faraday-future-launches-four-industry-productivity-solutions-nine-new-eai-devices-at-its-919-event-building-its-one-brain-multi-form-multi-capability-ff-eai-robot-world-2-0-all-new-futurist-now/
-- story: ffai-919-eai-robot-launch-2026-09
+### 第五届数贸会 AI 展区：细分场景意向订单与产能爬坡引关注
+- source: 中国证券报
+- url: https://www.cs.com.cn/ssgs/01/2026/09/24/detail_2026092410041383.html
+- story: cssec-gtdf-ai-zone-2026-09-24
 - summary: |
-  9月19日，Faraday Future 在线举办 919 发布会，推出涵盖人形、四足与移动操作臂等九款 EAI 设备配置，并发布 K-12 教育、科研、安防与巡检四套行业解决方案。旗舰 All-New Futurist 人形宣称 51 主动自由度（灵巧手升级后 71），标准版定价 89900 美元起，Ultra 版搭载 NVIDIA Jetson Thor；Master Mini 桌面人形 9990 美元起。编辑观点：「一脑多形」产品矩阵完整度是看点，但公司长期交付记录与 8 月 158 台订单量提示需把开售声明与 IROS 2026 展台订单、后续财报出货分开记账。
+  9月24日，中国证券报实探稿称第五届数贸会9月23日开幕，人工智能企业996家参展；现场可见高自由度灵巧手、协作具身多机接力长程任务、国产 AI 算力芯片等从实验室走向可体验形态。报道引述参展企业称清洁机器人等细分场景持续获得订单与产能爬坡压力。编辑观点：与杭州政协网稿件相互印证「小场景、大订单」主线；对读者而言，应要求企业披露连续运行工时与故障间隔，而非仅公布意向订单金额。
