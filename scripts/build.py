@@ -209,6 +209,91 @@ def _check_urls(data: dict) -> None:
                 raise SystemExit(f"strict: failed to fetch {url}: {e}") from e
 
 
+
+def _write_feed(site_root: Path, issue_dir: Path) -> None:
+    """生成 docs/site/feed.xml —— 供 Inoreader 等阅读器订阅(每期一条 item)。
+    扫描 issues/*/issue.md, 按 number 倒序输出 RSS 2.0。"""
+    issues_dir = REPO_ROOT / "issues"
+    entries: list[tuple[int, str, dict]] = []
+    if issues_dir.is_dir():
+        for d in sorted(issues_dir.iterdir()):
+            md = d / "issue.md"
+            if not (d.is_dir() and md.is_file()):
+                continue
+            try:
+                data = parse_issue(md)
+                entries.append((int(data["number"]), str(d.name), data))
+            except Exception:
+                continue
+    if not entries:
+        return
+    entries.sort(key=lambda x: x[0], reverse=True)
+
+    base = ""
+    for _, _, data in entries:
+        if data.get("pages_base_url"):
+            base = str(data["pages_base_url"]).rstrip("/")
+            break
+
+    def _rfc822(datestr: str) -> str:
+        try:
+            d = date.fromisoformat(str(datestr))
+        except Exception:
+            d = date.today()
+        return f"{d.strftime('%a, %d %b %Y')} 00:00:00 +0800"
+
+    items_xml: list[str] = []
+    for number, dirname, data in entries:
+        num_padded = f"{number:02d}"
+        url = f"{base}/issues/{num_padded}/"
+        title = f"人形脉冲 №{num_padded} · {format_date_range(data['date_start'], data['date_end'])}"
+        lede = str(data.get("lede") or "")
+        # 正文摘要: 把三节所有条目拼成 HTML
+        body_parts = [f"<p>{html.escape(lede)}</p>"]
+        for section in data["sections"]:
+            body_parts.append(f"<h3>{html.escape(section['title'])}</h3>")
+            for item in section["items"]:
+                body_parts.append(
+                    f'<p><a href="{html.escape(item["url"], quote=True)}">'
+                    f'{html.escape(item["title"])}</a>'
+                    f' <em>({html.escape(item["source"])})</em><br />'
+                    f'{html.escape(item["summary"]).replace(chr(10), "<br />")}</p>'
+                )
+        description = "".join(body_parts)
+        pubdate = _rfc822(data["date_end"])
+        items_xml.append(
+            "    <item>\n"
+            f"      <title>{html.escape(title)}</title>\n"
+            f"      <link>{html.escape(url, quote=True)}</link>\n"
+            f'      <guid isPermaLink="true">{html.escape(url, quote=True)}</guid>\n'
+            f"      <pubDate>{pubdate}</pubDate>\n"
+            f"      <description><![CDATA[{description}]]></description>\n"
+            "    </item>"
+        )
+
+    latest = entries[0][2]
+    feed_title = "人形脉冲 PULSE"
+    feed_desc = "每周一期具身智能 / 人形机器人洞察周报"
+    build_date = _rfc822(latest["date_end"])
+
+    feed_xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n'
+        "  <channel>\n"
+        f"    <title>{html.escape(feed_title)}</title>\n"
+        f"    <link>{html.escape(base + '/', quote=True)}</link>\n"
+        f"    <description>{html.escape(feed_desc)}</description>\n"
+        "    <language>zh-CN</language>\n"
+        f"    <lastBuildDate>{build_date}</lastBuildDate>\n"
+        f'    <atom:link href="{html.escape(base + "/feed.xml", quote=True)}" '
+        'rel="self" type="application/rss+xml" />\n'
+        + "\n".join(items_xml) + "\n"
+        "  </channel>\n"
+        "</rss>\n"
+    )
+    (site_root / "feed.xml").write_text(feed_xml, encoding="utf-8")
+
+
 def _sync_site(
     issue_html: str,
     issue_dir: Path,
@@ -343,6 +428,7 @@ def build_issue(
 
     site_root.mkdir(parents=True, exist_ok=True)
     _sync_site(issue_html, issue_dir, site_root, number_padded, date_range)
+    _write_feed(site_root, issue_dir)
     return out
 
 
